@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './main-page.css'
+import './main-page.scss'
 
 import Header from './components/header'
 

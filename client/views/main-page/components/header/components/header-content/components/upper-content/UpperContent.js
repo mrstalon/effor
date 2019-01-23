@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './upper-content.css'
+import './upper-content.scss'
 
 import Title from './components/title'
 import AuthForm from './components/auth-form'

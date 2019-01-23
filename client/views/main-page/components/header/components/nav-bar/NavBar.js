@@ -1,7 +1,6 @@
 import React from 'react'
-import cx from 'classnames'
 
-import './nav-bar.css'
+import './nav-bar.scss'
 
 class NavBar extends React.Component {
 

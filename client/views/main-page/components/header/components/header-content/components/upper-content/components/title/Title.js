@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './title.css'
+import './title.scss'
 
 import RegisterButton from './components/register-button'
 

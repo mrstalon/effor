@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './auth-form.css'
+import './auth-form.scss'
 
 class AuthForm extends React.Component {
   render() {

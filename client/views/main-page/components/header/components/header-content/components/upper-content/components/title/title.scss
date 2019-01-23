@@ -1,0 +1,32 @@
+.title {
+  .title__text {
+    width: 400px;
+    line-height: 35px;
+    color: white;
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: 3px;
+  }
+  
+  .title__register-button {
+    width: 370px;
+    height: 70px;
+    border-radius: 15px;
+    margin-top: 30px;
+  
+  
+    font-size: 27px;
+    text-align: center;
+  
+  
+    background-color: rgb(255, 147, 39);
+    cursor: pointer;
+    transition: 0.3s all ease;
+    color: white;
+  }
+  
+  .title__register-button:hover {
+    background-color: rgb(216, 125, 33);
+  }
+}
+

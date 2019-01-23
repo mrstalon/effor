@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './header.css'
+import './header.scss'
 
 import NavBar from './components/nav-bar'
 import HeaderContent from './components/header-content'

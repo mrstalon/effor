@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './bottom-content.css'
+import './bottom-content.scss'
 
 class BottomContent extends React.Component {
   render() {
