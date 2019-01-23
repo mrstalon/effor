@@ -1,0 +1,12 @@
+.bottom-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-content__item {
+  color: white;
+  font-size: 25px;
+  letter-spacing: 2.5px;
+}

@@ -1,0 +1,5 @@
+.upper-content {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
