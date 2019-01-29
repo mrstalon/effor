@@ -1,8 +1,6 @@
 {
   "name": "mentor-dashboard",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "client-watch": "webpack-dev-server --mode development --hot --inline",
     "client-build": "webpack --mode production --progress --hide-modules",
