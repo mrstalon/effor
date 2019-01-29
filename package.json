@@ -7,7 +7,7 @@
     "client-watch": "webpack-dev-server --mode development --hot --inline",
     "client-build": "webpack --mode production --progress --hide-modules",
     "server-watch": "nodemon server/server.js",
-    "heroku-postbuild": "npm run client-build"
+    "heroku-postbuild": "bash build/prod.sh"
   },
   "engines": {
     "node": "10.x",

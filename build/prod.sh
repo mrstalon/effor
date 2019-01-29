@@ -1,0 +1,3 @@
+echo "BUILDING CLIENT PART"
+npm run client-build
+echo "BUILDING CLIENT PART HAS FINISHED"
