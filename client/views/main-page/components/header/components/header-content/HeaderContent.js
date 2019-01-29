@@ -41,10 +41,14 @@ class HeaderContent extends React.Component {
   }
 
   preloadBgImages = () => {
-    const bgImages = headerBgList.map((imgPath) => {
-      return require(`../../../../../../assets/${imgPath}`)
-    })
-    this.setState({ bgImages })
+    Promise.all(headerBgList.map((imgPath) => prefetchImg(imgPath)))
+      .then((data) => {
+        this.setState({ bgImages: data.map((module) => module.default) })
+      })
+
+    function prefetchImg (imgName) {
+      return import(/* webpackPrefetch: true */`../../../../../../assets/${imgName}`)
+    }
   }
 
   render() {
