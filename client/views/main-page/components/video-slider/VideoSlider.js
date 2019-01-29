@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './video-slider.scss'
+
 class VideoSlider extends React.Component {
 
   render() { 
