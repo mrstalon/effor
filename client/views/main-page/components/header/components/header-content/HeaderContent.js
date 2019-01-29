@@ -10,11 +10,18 @@ import headerBgList from '../../../../../../constants/header-bg-list'
 class HeaderContent extends React.Component {
   state = {
     intervalId: null,
-    currentBgPosition: 0
+    currentBgPosition: 0,
+    bgImages: null
   }
 
   componentDidMount() {
-    const intervalId = setInterval(() => {
+    this.preloadBgImages()
+    const intervalId = this.setAnimationInterval()
+    this.setState({ intervalId })
+  }
+
+  setAnimationInterval = () => {
+    return setInterval(() => {
       const { currentBgPosition } = this.state
       let nextBgPosition
       if (currentBgPosition + 1 >= headerBgList.length) {
@@ -22,12 +29,10 @@ class HeaderContent extends React.Component {
       } else {
         nextBgPosition = currentBgPosition + 1
       }
-      this.changeHeaderBg(nextBgPosition)
       this.setState({
         currentBgPosition: nextBgPosition
       })
     }, 3000)
-    this.setState({ intervalId })
   }
 
   componentWillUnmount() {
@@ -35,19 +40,30 @@ class HeaderContent extends React.Component {
     clearInterval(currentBgPosition)
   }
 
-  changeHeaderBg = (nextBgPosition) => {
-    const bgName = headerBgList[nextBgPosition]
-    const newBgImg = require(`../../../../../../assets/${bgName}`)
-    const header = document.querySelector('.header-content__bg-image')
-    header.style.background = `url(${newBgImg}) no-repeat`
-    header.style.backgroundSize = 'cover';
-    header.style.backgroundPosition = 'center center';
+  preloadBgImages = () => {
+    const bgImages = headerBgList.map((imgPath) => {
+      return require(`../../../../../../assets/${imgPath}`)
+    })
+    this.setState({ bgImages })
   }
 
   render() {
+    const { bgImages, currentBgPosition } = this.state
+    if (!bgImages) {
+      return null
+    }
+    const currentImg = bgImages[currentBgPosition]
+
     return (
       <div className="header-content">
-        <div className="header-content__bg-image"></div>
+        <div
+          className="header-content__bg-image"
+          style={{
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            background: `url(${currentImg}) no-repeat`
+          }}
+        />
         <div className="content">
           <UpperContent />
           <BottomContent />
