@@ -10,13 +10,12 @@ class BackgroundSlider extends React.Component {
   state = {
     intervalId: null,
     bgImages: null,
-    currentBgPosition: 0
+    currentBgPosition: 0,
+    loadedCount: 0
   }
 
   componentDidMount() {
     this.preloadImgsPath()
-    const intervalId = this.setAnimationInterval()
-    this.setState({ intervalId })
   }
 
   setAnimationInterval = () => {
@@ -46,8 +45,21 @@ class BackgroundSlider extends React.Component {
     this.setState({ bgImages })
   }
 
+  handleImgLoad = () => {
+    this.setState((state) => ({
+      loadedCount: state.loadedCount + 1
+    }), () => {
+      const { loadedCount, bgImages } = this.state
+      if (loadedCount === bgImages.length) {
+        const intervalId = this.setAnimationInterval()
+        this.setState({ intervalId })
+      }
+    })
+  }
+
   render() { 
     const { bgImages, currentBgPosition } = this.state
+    const { handleImgLoad } = this
 
     if (!bgImages) {
       return null
@@ -58,12 +70,11 @@ class BackgroundSlider extends React.Component {
         {bgImages.map((imgPath, id) => {
           const isCurrent = currentBgPosition === id
           return (
-            <div
+            <img
+              onLoad={handleImgLoad}
               key={id}
               className={cx('header-content__bg-image', { 'active': isCurrent, 'out': !isCurrent  })}
-              style={{
-                background: `url(${imgPath}) no-repeat`
-              }}
+              src={imgPath}
             />
           )
         })}
