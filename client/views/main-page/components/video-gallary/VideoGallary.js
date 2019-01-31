@@ -24,6 +24,7 @@ class VideoSlider extends React.Component {
 
     return (
       <section className="video-gallary">
+          <h1>Видео про нас!</h1>
           <Slider {...sliderSettings}>
             {videos.map((video, id) => {
               return <Video youtubeId={video.youtubeId} key={id} id={id} />
