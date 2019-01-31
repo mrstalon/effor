@@ -1,0 +1,51 @@
+.auth-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 280px;
+  height: 100%;
+  margin-right: 15px;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  a {
+    cursor: pointer;
+    transition: 0.3s all ease-in;
+  }
+}
+
+.auth-bar__link-mobile {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+.auth-bar__link:hover {
+  color: rgb(255, 195, 99);
+}
+
+.popup-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a:hover {
+    color: rgb(145, 107, 46);
+  }
+}
+
+@media (max-width: 620px) {
+  .auth-bar {
+    width: 120px;
+  }
+
+  .auth-bar__link {
+    display: none;
+  }
+
+  .auth-bar__link-mobile {
+    display: initial;
+  }
+}
