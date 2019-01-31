@@ -1,0 +1,36 @@
+@import "~slick-carousel/slick/slick-theme.css";
+@import "~slick-carousel/slick/slick.css";
+
+
+.video-gallary {
+  height: 620px;
+}
+
+.slick-slider {
+  margin-top: 40px;
+  height: 500px;
+}
+
+.slick-dots li button:before {
+  font-size: 13px;
+}
+
+@media (max-width: 850px) {
+  .video-gallary {
+    height: 520px;
+  }
+
+  .slick-slider {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-gallary {
+    height: 420px;
+  }
+
+  .slick-slider {
+    height: 300px;
+  }
+}
