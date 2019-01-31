@@ -71,6 +71,9 @@ class BackgroundSlider extends React.Component {
           const isCurrent = currentBgPosition === id
           return (
             <img
+              style={{
+                objectFit: 'cover'
+              }}
               onLoad={handleImgLoad}
               key={id}
               className={cx('header-content__bg-image', { 'active': isCurrent, 'out': !isCurrent  })}

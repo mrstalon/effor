@@ -1,4 +1,4 @@
 {
   "presets": ["@babel/preset-react", "@babel/preset-env"],
-  "plugins": ["transform-class-properties", "@babel/plugin-syntax-dynamic-import"]
+  "plugins": ["transform-class-properties", "@babel/plugin-syntax-dynamic-import", "react-hot-loader/babel"]
 }
